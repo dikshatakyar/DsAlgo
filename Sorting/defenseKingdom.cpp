@@ -9,6 +9,10 @@ int main(){
         cin >> w >> h >> n;
         vector <int> x(n), y(n);
 
+         if(n == 0){
+            cout << (w * h) << endl;
+            continue;
+        }
         for(int i = 0; i < n; ++i){
             cin >> x[i] >> y[i];
         }
