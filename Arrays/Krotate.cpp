@@ -15,6 +15,7 @@ void reverse(int *arr, int start, int end){
 vector<int> kRotate(vector<int> a, int k){
     // your code  goes here
     int n = a.size();
+    k = k % n;
     reverse(a, 0, k-1);
     reverse(a, k, n-1);
     reverse(a, 0, n-1);
