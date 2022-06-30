@@ -10,7 +10,7 @@ void printsubarrays(int *arr, int n){
    int largestsum = 0;
    for(int i = 0; i < n; ++i){
        for(int j = i; j < n; ++j){
-           int subarray_sum = prefixarr[j] - prefixarr[i - 1];
+           int subarray_sum = i > 0 ? prefixarr[j] - prefixarr[i - 1] : prefixarr[j];
            largestsum = max(largestsum, subarray_sum);
        }
    }
