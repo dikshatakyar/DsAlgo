@@ -3,7 +3,7 @@ using namespace std;
 const int n = 3;
 const int m = 3;
 
-void spiralPrint(int arr[n][m]){
+void spiralPrint(int arr[][m]){
     int startRow = 0;
     int endRow = n - 1;
     int startCol = 0;
