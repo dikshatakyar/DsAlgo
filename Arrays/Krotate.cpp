@@ -2,23 +2,25 @@
 using namespace std;
 
 
-void reverse(int *arr, int start, int end){
-    
-    	int l = start, r = end;
-      
-      	while(l < r){
-          	swap(arr[l], arr[r]);
-          	l++; r--;
+class Solution {
+public:
+    void reverse(vector<int> &arr, int start, int end){
+        while(start < end){
+            swap(arr[start], arr[end]);
+            start++, end --;
         }
-}
-
-vector<int> kRotate(vector<int> a, int k){
-    // your code  goes here
-    int n = a.size();
-    k = k % n;
-    reverse(a, 0, k-1);
-    reverse(a, k, n-1);
-    reverse(a, 0, n-1);
+    }
     
-}
+    
+    void rotate(vector<int>& nums, int k) {
+        int n = nums.size();
+        if(k > n){
+            k = k % n;
+        }
+    
+        reverse(nums, 0, n - 1 - k);
+        reverse(nums, n - k, n - 1); //n - 1 - k + 1 = n - k
+        reverse(nums, 0, n - 1);
+    }
+};
 
