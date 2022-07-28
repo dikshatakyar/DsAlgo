@@ -19,20 +19,25 @@ bool canPlace(int board[][20], int n, int i, int j){
             return false;
         }
      }
-     //checking for left diagonal
-     while(i >= 0 && j >=0){
-        if(board[i][j] == 1){
-            return false;
+       //checking for left diagonol
+        int row = i;
+        int col = j;
+        while(row >= 0 && col >= 0){
+            if(board[row][col] == 'Q'){
+                return false;
+            }
+            --row, --col;
         }
-        --i, --j;
-     }
-     //checking for right diagonal
-     while(i >= 0 && j < n){
-        if(board[i][j] == 1){
-            return false;
+        
+        //checking for right diagonal
+        row = i;
+        col = j;
+        while(row >=0 && col < n){
+            if(board[row][col] == 'Q'){
+                return false;
+            }
+            --row, ++col;
         }
-        --i, ++j;
-     }
 
     return true;
 }
