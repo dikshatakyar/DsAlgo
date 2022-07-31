@@ -23,8 +23,14 @@ class Solution
         for(int i = 0; i < m; ++i){
             count[b[i] - 97]--;
         }
+          for(int i = 0; i < 26; ++i){
+            if(count[i] != 0){
+                return false;
+            }
+        }
+    return true;
         
-        
+       
     }
 
 };
